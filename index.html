@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="Mar's Store | Moda y Accesorios en Santo Tomás 🌻">
+    <meta name="description" content="Descubre moda, calzado, cosméticos y accesorios en Santo Tomás. Arma tu look completo con atención personalizada. ¡Florece con tu estilo!">
+    <meta name="keywords" content="Santo Tomás, moda femenina, accesorios, tienda de estilo, calzado, cosméticos, bolsos, Mar's Store">
+    <meta name="author" content="Mar's Store">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Mar's Store | Moda y Accesorios en Santo Tomás 🌻">
+    <meta property="og:description" content="Arma tu look completo con atención personalizada. ¡Florece con tu estilo!">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_CR">
+    <title>Mar's Store | Moda y Accesorios en Santo Tomás 🌻</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --crema: #FFF9F2;
+            --girasol: #F4C542;
+            --girasol-hover: #e8b830;
+            --beige: #EADBC8;
+            --verde-oliva: #7A8B5A;
+            --marron: #6B4F3A;
+            --marron-oscuro: #4a3728;
+            --blanco: #FFFFFF;
+            --whatsapp-green: #25D366;
+            --sombra-suave: 0 4px 20px rgba(107, 79, 58, 0.08);
+            --sombra-media: 0 8px 30px rgba(107, 79, 58, 0.12);
+            --transicion: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--crema);
+            color: var(--marron);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Tipografía */
+        h1, h2, h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--marron);
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            line-height: 1.1;
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        .handwritten {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .highlight {
+            color: var(--girasol);
+        }
+
+        /* Contenedor */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Botones */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transicion);
+            border: none;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background-color: var(--girasol);
+            color: var(--marron-oscuro);
+            box-shadow: 0 4px 15px rgba(244, 197, 66, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--girasol-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(244, 197, 66, 0.55);
+        }
+
+        .btn-whatsapp {
+            background-color: var(--whatsapp-green);
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.35);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1fb855;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.5);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--marron);
+            border: 2px solid var(--marron);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--marron);
+            color: var(--crema);
+        }
+
+        /* Header / Navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 0.8rem 0;
+            background-color: rgba(255, 249, 242, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(234, 219, 200, 0.5);
+            transition: var(--transicion);
+        }
+
+        .navbar.scrolled {
+            box-shadow: var(--sombra-suave);
+        }
+
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            color: var(--marron);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .navbar-brand .logo-icon {
+            font-size: 2rem;
+        }
+
+        .navbar-cta {
+            padding: 0.6rem 1.2rem;
+            font-size: 0.85rem;
+        }
+
+        /* Secciones generales */
+        section {
+            padding: 5rem 0;
+            position: relative;
+        }
+
+        .section-alt {
+            background-color: var(--beige);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 5rem;
+            background: linear-gradient(135deg, rgba(255,249,242,0.9) 0%, rgba(234,219,200,0.6) 100%),
+                        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none"><circle cx="85" cy="15" r="8" fill="%23F4C542" opacity="0.3"/><circle cx="15" cy="80" r="12" fill="%23F4C542" opacity="0.2"/><circle cx="90" cy="70" r="5" fill="%237A8B5A" opacity="0.2"/><circle cx="10" cy="20" r="6" fill="%23F4C542" opacity="0.25"/></svg>');
+            background-size: cover, 200px;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            border: 2px solid var(--girasol);
+            border-radius: 50%;
+            opacity: 0.15;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 400px;
+            height: 400px;
+            border: 2px solid var(--girasol);
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(3deg); }
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 .handwritten {
+            display: block;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: var(--girasol);
+            text-shadow: 0 2px 10px rgba(244, 197, 66, 0.3);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 2px 10px rgba(244, 197, 66, 0.3); }
+            50% { text-shadow: 0 4px 25px rgba(244, 197, 66, 0.6); }
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            color: var(--marron);
+            max-width: 600px;
+            margin: 1.5rem auto;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .hero .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .hero-decoration {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1.5rem;
+            animation: bounce 2s ease-in-out infinite;
+            cursor: pointer;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(-10px); }
+        }
+
+        /* Sección Problema */
+        .problema-solucion-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .problema-content, .solucion-content {
+            position: relative;
+        }
+
+        .problema-content .icono-grande {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .problema-content h2 {
+            color: var(--marron-oscuro);
+        }
+
+        .problema-content p, .solucion-content p {
+            font-size: 1.05rem;
+            color: var(--marron);
+            opacity: 0.85;
+        }
+
+        .solucion-image {
+            background: linear-gradient(135deg, var(--beige), var(--crema));
+            border-radius: 20px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            box-shadow: var(--sombra-media);
+        }
+
+        /* Catálogo */
+        .catalogo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .catalogo-card {
+            background: var(--blanco);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .catalogo-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .catalogo-card-image {
+            height: 280px;
+            background: linear-gradient(135deg, var(--beige), var(--crema));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .catalogo-card-image .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(107, 79, 58, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transicion);
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .catalogo-card:hover .overlay {
+            opacity: 1;
+        }
+
+        .catalogo-card-body {
+            padding: 1.5rem;
+        }
+
+        .catalogo-card-body h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .catalogo-card-body p {
+            font-size: 0.9rem;
+            opacity: 0.75;
+        }
+
+        .catalogo-card-body .btn {
+            margin-top: 1rem;
+            width: 100%;
+            font-size: 0.85rem;
+            padding: 0.7rem 1rem;
+        }
+
+        /* Beneficios */
+        .beneficios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .beneficio-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--blanco);
+            border-radius: 20px;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+
+        .beneficio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .beneficio-icono {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .beneficio-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .beneficio-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Cómo funciona */
+        .pasos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            position: relative;
+        }
+
+        .paso-card {
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .paso-numero {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--girasol);
+            color: var(--marron-oscuro);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            font-family: 'Cormorant Garamond', serif;
+            box-shadow: 0 4px 15px rgba(244, 197, 66, 0.4);
+            transition: var(--transicion);
+        }
+
+        .paso-card:hover .paso-numero {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(244, 197, 66, 0.6);
+        }
+
+        .paso-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .paso-card p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .paso-emoji {
+            font-size: 2.5rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Testimonios */
+        .testimonios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .testimonio-card {
+            background: var(--blanco);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--sombra-suave);
+            position: relative;
+            border-left: 4px solid var(--girasol);
+            transition: var(--transicion);
+        }
+
+        .testimonio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+        }
+
+        .testimonio-card .estrellas {
+            color: var(--girasol);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .testimonio-card blockquote {
+            font-style: italic;
+            font-size: 1rem;
+            opacity: 0.85;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonio-autor {
+            font-weight: 600;
+            color: var(--marron);
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+        }
+
+        /* Garantía */
+        .garantia-banner {
+            background: linear-gradient(135deg, var(--marron), var(--marron-oscuro));
+            color: var(--crema);
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .garantia-banner h2 {
+            color: var(--crema);
+            margin-bottom: 1rem;
+        }
+
+        .garantia-banner .garantia-icono {
+            font-size: 4rem;
+            display: block;
+            margin-bottom: 1rem;
+        }
+
+        .garantia-banner p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+        }
+
+        /* Redes Sociales */
+        .redes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .red-card {
+            background: var(--blanco);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+            text-decoration: none;
+            color: var(--marron);
+        }
+
+        .red-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-media);
+            background: var(--girasol);
+            color: var(--marron-oscuro);
+        }
+
+        .red-card .red-icono {
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .red-card span {
+            font-weight: 600;
+        }
+
+        .hashtag-oficial {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 1.3rem;
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            color: var(--marron);
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 700px;
+            margin: 2rem auto 0;
+        }
+
+        .faq-item {
+            background: var(--blanco);
+            margin-bottom: 0.8rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--sombra-suave);
+            transition: var(--transicion);
+        }
+
+        .faq-item.active {
+            box-shadow: var(--sombra-media);
+        }
+
+        .faq-question {
+            padding: 1.2rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transicion);
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(244, 197, 66, 0.1);
+        }
+
+        .faq-question .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s ease;
+            color: var(--girasol);
+        }
+
+        .faq-item.active .faq-question .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+            padding: 0 1.5rem;
+            font-size: 0.95rem;
+            opacity: 0.85;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 1.5rem 1.2rem;
+        }
+
+        /* CTA Final */
+        .cta-final {
+            text-align: center;
+            background: linear-gradient(135deg, var(--girasol), #e8c940);
+            padding: 5rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+        }
+
+        .cta-final h2 {
+            color: var(--marron-oscuro);
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .cta-final p {
+            color: var(--marron);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        .cta-final .btn {
+            position: relative;
+            font-size: 1.1rem;
+            padding: 1.2rem 3rem;
+        }
+
+        /* Botón flotante WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45);
+            z-index: 999;
+            transition: var(--transicion);
+            text-decoration: none;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.45); }
+            50% { box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7); }
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            animation: none;
+            box-shadow: 0 10px 35px rgba(37, 211, 102, 0.7);
+        }
+
+        .whatsapp-float .tooltip {
+            position: absolute;
+            right: 70px;
+            background: var(--marron-oscuro);
+            color: var(--crema);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transicion);
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .whatsapp-float:hover .tooltip {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            background: var(--marron-oscuro);
+            color: var(--crema);
+        }
+
+        footer p {
+            opacity: 0.7;
+            font-size: 0.9rem;
+            margin: 0.3rem 0;
+        }
+
+        footer .footer-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            opacity: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        footer .footer-heart {
+            color: var(--girasol);
+        }
+
+        /* Partículas decorativas */
+        .particula {
+            position: absolute;
+            pointer-events: none;
+            opacity: 0.4;
+            animation: flotar 6s ease-in-out infinite;
+        }
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(10deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 0;
+            }
+            .problema-solucion-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .solucion-image {
+                height: 200px;
+                font-size: 5rem;
+            }
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            .navbar-cta {
+                padding: 0.5rem 1rem;
+                font-size: 0.75rem;
+            }
+            .hero {
+                min-height: 90vh;
+            }
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 15px;
+                right: 15px;
+            }
+            .whatsapp-float .tooltip {
+                display: none;
+            }
+            .catalogo-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 0.8rem;
+            }
+            .catalogo-card-image {
+                height: 180px;
+                font-size: 3rem;
+            }
+            .garantia-banner {
+                padding: 2rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .catalogo-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 .handwritten {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <span class="logo-icon">🌻</span> Mar's Store
+            </a>
+            <a href="#cta-final" class="btn btn-primary navbar-cta">Escríbeme</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>
+                <span class="handwritten">Florece</span>
+                con tu estilo.
+            </h1>
+            <p class="subtitle">
+                Moda, accesorios y detalles que resaltan tu mejor versión. Todo lo que necesitas para un look completo, en un solo lugar en Santo Tomás.
+            </p>
+            <div class="btn-group">
+                <a href="https://wa.me/50600000000?text=¡Hola%2C+Mar!+🌻+Vengo+de+tu+página+y+quiero+saber+más+de..." class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                    💬 Escríbeme por WhatsApp
+                </a>
+                <a href="#inspiracion" class="btn btn-outline">Ver looks ✨</a>
+            </div>
+        </div>
+        <div class="hero-decoration" onclick="document.getElementById('problema').scrollIntoView({behavior:'smooth'})">
+            ↓ Descubre más
+        </div>
+    </section>
+
+    <!-- Sección Problema -->
+    <section id="problema">
+        <div class="container">
+            <div class="problema-solucion-grid">
+                <div class="problema-content">
+                    <span class="icono-grande">😔</span>
+                    <h2>Ir de tienda en tienda para encontrar algo que combine...</h2>
+                    <p>
+                        Ves ideas hermosas en redes, pero en tu día a día sientes que pierdes tiempo y dinero intentando armar un look que te haga sentir realmente segura y bonita. Sabemos cómo se siente.
+                    </p>
+                </div>
+                <div class="solucion-image" aria-label="Imagen decorativa de moda femenina">
+                    👜👠✨
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Solución -->
+    <section class="section-alt" id="solucion">
+        <div class="container" style="text-align: center;">
+            <h2>En Mar's Store, nacimos en Santo Tomás para que florezcas con estilo.</h2>
+            <p style="max-width: 700px; margin: 0 auto 2rem; font-size: 1.05rem;">
+                Somos esa tienda especial que buscabas. Reunimos para ti moda, calzado, cosméticos y accesorios cuidadosamente seleccionados. Aquí no solo compras productos: encuentras combinaciones que te hacen brillar, con la asesoría cercana que mereces.
+            </p>
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; font-size: 1.2rem; font-weight: 500;">
+                <span>👜 Bolsos</span>
+                <span>👠 Calzado</span>
+                <span>💄 Cosméticos</span>
+                <span>✨ Accesorios</span>
+                <span>👶 Ropa infantil</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Catálogo Visual de Estilos -->
+    <section id="inspiracion">
+        <div class="container" style="text-align: center;">
+            <h2>✨ Inspírate y encuentra tu combinación perfecta.</h2>
+            <p style="max-width: 600px; margin: 0 auto 2rem;">
+                Más que productos, te mostramos ideas para que brilles en cualquier ocasión. Cada look está pensado para que te sientas hermosa, combinada y segura.
+            </p>
+            <div class="catalogo-grid">
+                <!-- Look 1 -->
+                <div class="catalogo-card">
+                    <div class="catalogo-card-image" style="background: linear-gradient(135deg, #fdf2e3, #f9e4d0);">
+                        👜✨👠
+                        <div class="overlay">✨ Ver look</div>
+                    </div>
+                    <div class="catalogo-card-body">
+                        <h3>Casual Chic</h3>
+                        <p>El toque sutil que eleva tu día a día.</p>
+                        <a href="https://wa.me/50600000000?text=¡Hola+Mar!+🌻+Quiero+saber+más+del+look+Casual+Chic" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Lo quiero 🌻</a>
+                    </div>
+                </div>
+                <!-- Look 2 -->
+                <div class="catalogo-card">
+                    <div class="catalogo-card-image" style="background: linear-gradient(135deg, #f5ecd7, #e8dcc8);">
+                        👗💎👜
+                        <div class="overlay">✨ Ver look</div>
+                    </div>
+                    <div class="catalogo-card-body">
+                        <h3>Ocasión Especial</h3>
+                        <p>Sofisticación para tus momentos más brillantes.</p>
+                        <a href="https://wa.me/50600000000?text=¡Hola+Mar!+🌻+Quiero+saber+más+del+look+Ocasión+Especial" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Lo quiero 🌻</a>
+                    </div>
+                </div>
+                <!-- Look 3 -->
+                <div class="catalogo-card">
+                    <div class="catalogo-card-image" style="background: linear-gradient(135deg, #f9e8d5, #f0dcc8);">
+                        👟🎒💄
+                        <div class="overlay">✨ Ver look</div>
+                    </div>
+                    <div class="catalogo-card-body">
+                        <h3>Juvenil & Fresco</h3>
+                        <p>Combina, destaca y exprésate sin miedo.</p>
+                        <a href="https://wa.me/50600000000?text=¡Hola+Mar!+🌻+Quiero+saber+más+del+look+Juvenil" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Lo quiero 🌻</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="section-alt" id="beneficios">
+        <div class="container" style="text-align: center;">
+            <h2>Aquí no solo compras, te consientes y solucionas tu vida.</h2>
+            <div class="beneficios-grid">
+                <div class="beneficio-card">
+                    <span class="beneficio-icono">🌻</span>
+                    <h3>Todo en un solo lugar</h3>
+                    <p>Bolsos, calzado, cosméticos y accesorios que combinan entre sí. Olvídate de recorrer mil tiendas.</p>
+                </div>
+                <div class="beneficio-card">
+                    <span class="beneficio-icono">💬</span>
+                    <h3>Atención real y cercana</h3>
+                    <p>No hablas con un robot. Te atiendo personalmente por WhatsApp, resuelvo tus dudas y te ayudo a elegir.</p>
+                </div>
+                <div class="beneficio-card">
+                    <span class="beneficio-icono">✨</span>
+                    <h3>Moda accesible y en tendencia</h3>
+                    <p>Luce los estilos que amas, con precios que se ajustan a ti sin sacrificar calidad.</p>
+                </div>
+                <div class="beneficio-card">
+                    <span class="beneficio-icono">🛍️</span>
+                    <h3>Para ti y tu familia</h3>
+                    <p>Desde tu look perfecto hasta detalles de ropa infantil. Aquí florece el estilo de todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ¿Cómo funciona? -->
+    <section id="como-funciona">
+        <div class="container" style="text-align: center;">
+            <h2>Tu nuevo look favorito, a solo 3 pasos de distancia.</h2>
+            <div class="pasos-grid">
+                <div class="paso-card">
+                    <div class="paso-numero">1</div>
+                    <span class="paso-emoji">🌻</span>
+                    <h3>Inspírate</h3>
+                    <p>Explora nuestro catálogo de looks y productos. Encuentra lo que te hace brillar.</p>
+                </div>
+                <div class="paso-card">
+                    <div class="paso-numero">2</div>
+                    <span class="paso-emoji">💬</span>
+                    <h3>Escríbeme</h3>
+                    <p>Envíame un mensaje a WhatsApp. Cuéntame qué te gustó o pídeme ayuda. ¡Soy Mar!</p>
+                </div>
+                <div class="paso-card">
+                    <div class="paso-numero">3</div>
+                    <span class="paso-emoji">✨</span>
+                    <h3>¡Florece!</h3>
+                    <p>Coordinamos tu pedido, pago y entrega. Recibirás justo lo que necesitas para brillar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="section-alt" id="testimonios">
+        <div class="container" style="text-align: center;">
+            <h2>Miles de mujeres ya florecen con su estilo. ¿Te sumas?</h2>
+            <div class="testimonios-grid">
+                <div class="testimonio-card">
+                    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                    <blockquote>
+                        "¡Por fin encontré una tienda donde los bolsos combinan perfecto con los zapatos! Ahorré un montón de tiempo. Gracias, Mar."
+                    </blockquote>
+                    <p class="testimonio-autor">— Daniela R. 🌻 #FloreceConMar</p>
+                </div>
+                <div class="testimonio-card">
+                    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                    <blockquote>
+                        "Me encantó la atención. Le mandé una foto de mi vestido y Mar me ayudó a elegir el calzado y los accesorios perfectos. ¡Quedé enamorada!"
+                    </blockquote>
+                    <p class="testimonio-autor">— Paola S.</p>
+                </div>
+                <div class="testimonio-card">
+                    <div class="estrellas">⭐⭐⭐⭐⭐</div>
+                    <blockquote>
+                        "Siempre dudé en pedir por mensaje, ¡pero fue la mejor decisión! Todo llegó rapidísimo y los productos son hermosos."
+                    </blockquote>
+                    <p class="testimonio-autor">— Valentina G.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Garantía de Confianza -->
+    <section id="garantia">
+        <div class="container">
+            <div class="garantia-banner">
+                <span class="garantia-icono">🌻</span>
+                <h2>Nuestra promesa para ti.</h2>
+                <p>
+                    Cada producto en Mar's Store es seleccionado con el mismo cariño con el que te atiendo. Mi compromiso es que te sientas segura, hermosa y completamente satisfecha con tu elección. Tu confianza es lo que hace florecer este sueño.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redes Sociales -->
+    <section class="section-alt" id="redes">
+        <div class="container" style="text-align: center;">
+            <h2>Inspírate todos los días con nuestros looks.</h2>
+            <p style="max-width: 550px; margin: 0 auto 2rem;">
+                Síguenos en Instagram, Facebook y TikTok para más ideas, combinaciones exclusivas y contenido que te hará brillar.
+            </p>
+            <div class="redes-grid">
+                <a href="https://instagram.com/marsstore" class="red-card" target="_blank" rel="noopener noreferrer">
+                    <span class="red-icono">📸</span>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://facebook.com/marsstore" class="red-card" target="_blank" rel="noopener noreferrer">
+                    <span class="red-icono">👥</span>
+                    <span>Facebook</span>
+                </a>
+                <a href="https://tiktok.com/@marsstore" class="red-card" target="_blank" rel="noopener noreferrer">
+                    <span class="red-icono">🎥</span>
+                    <span>TikTok</span>
+                </a>
+            </div>
+            <p class="hashtag-oficial">🌻 #FloreceConMar</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+        <div class="container">
+            <h2 style="text-align: center;">❓ Resolvemos tus dudas</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Hacen envíos?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        ¡Claro que sí! Hacemos envíos a todo Santo Tomás y sus alrededores. Al escribirme a WhatsApp, cuéntame dónde estás y te confirmo todo.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Cómo puedo ordenar?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Es muy fácil. Solo debes escribirme a mi WhatsApp 📲, decirme qué producto o look te gustó, y yo me encargo de todo lo demás.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Qué métodos de pago aceptan?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Aceptamos pagos por Sinpe Móvil, transferencia bancaria y efectivo contra entrega. Buscamos la opción que te sea más cómoda.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Tienen apartados?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, manejamos apartados en la mayoría de nuestros productos. Consulta por WhatsApp y te doy los detalles con cariño.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        ¿Atienden todos los días?
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Atiendo de lunes a sábado en horario comercial. Si me escribes fuera del horario, te respondo al día siguiente sin falta.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-final" id="cta-final">
+        <div class="container">
+            <h2>Tu próximo look favorito te está esperando.</h2>
+            <p>
+                No te conformes con menos. Descubre lo fácil y lindo que es armar un look que te haga sentir poderosa y auténtica. Te espero en WhatsApp con todas las novedades para ti.
+            </p>
+            <a href="https://wa.me/50600000000?text=¡Hola%2C+Mar!+🌻+Quiero+comprar+ahora.+Vengo+de+tu+página" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">
+                🌻 Quiero comprar ahora
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-brand">🌻 Mar's Store</p>
+        <p>Hecho con <span class="footer-heart">❤️</span> en Santo Tomás</p>
+        <p style="margin-top: 0.8rem;">#FloreceConMar</p>
+        <p style="margin-top: 1rem; opacity: 0.5; font-size: 0.8rem;">© 2025 Mar's Store. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/50600000000?text=¡Hola%2C+Mar!+🌻+Vengo+de+tu+página+y+quiero+saber+más+de..." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Escríbeme por WhatsApp">
+        <span class="tooltip">💬 Escríbeme</span>
+        <span style="font-size: 1.8rem;">💬</span>
+    </a>
+
+    <!-- JavaScript -->
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ toggle
+        function toggleFaq(element) {
+            const faqItem = element.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Cerrar todos los FAQ
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Abrir el seleccionado si no estaba activo
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        }
+
+        // Animación de entrada suave
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar tarjetas para animación
+        document.querySelectorAll('.catalogo-card, .beneficio-card, .paso-card, .testimonio-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Reemplazar número de WhatsApp
+        // Cambia '50600000000' por tu número real en todos los enlaces
+        console.log('🌻 Mar\'s Store - Landing Page lista');
+        console.log('📱 Recuerda cambiar el número de WhatsApp en todos los enlaces');
+        console.log('🔍 Busca: 50600000000 y reemplázalo por tu número');
+    </script>
+
+</body>
+</html>
